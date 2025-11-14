@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/images/tic-tac-toe-bg.png');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.game-header{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #E67E22;
+}
+
+.game-container{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content:space-around;
+  background-color: #850E35;
+  height: 400px;
+  width: 500px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  border: 2px solid;
+}
+
+.player{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 200px;
+  background-color: #FFC4C4;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.player-name{
+  width: 70px;
+}
+
+.player-active{
+  border: 5px solid #ff00ff;
+  border-radius: 5px;
+  animation: border-pulse 1s infinite alternate;
+}
+
+@keyframes border-pulse {
+  from{
+    border-color: #3c313c;
+  }
+  to{
+    border-color: #426e6e;
+  }
+}
+
+input{
+  width: 60px;
+}
+
+.player > button{
+  background-color: #FCF5EE;
+  border: 2px solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.grid-container{
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.box{
+  height: 90px;
+  width: 90px;
+  background-color:rgb(187, 233, 235);
+  border: 2px solid;
+  border-radius: 5px;
+  font-size: xx-large;
+}
+
+.box:hover{
+  transform: scale(1.05)translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.box:active{
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.log{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 150px;
+  height: 285px;
+  background: #EE6983;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.log > h3{
+  color: white;
+  margin-top: 10px;
+  width: 150px;
+  height: 10px;
+}
+
+.log-list{
+  display: flex;;
+  justify-content: space-evenly;
+  border: 2px solid;
+  border-radius: 5px;
+  font-size:small;
+  flex-wrap: wrap;
+  height: 200px;
+  width: 120px;
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
+  transition: all 0.3s ease;
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.log-list::-webkit-scrollbar {
+    width: 8px; /* scrollbar width */
+}
+
+.log-list::-webkit-scrollbar-track {
+    background: lightsalmon; /* track color */
+    border-radius: 5px;
+}
+
+.log-list::-webkit-scrollbar-thumb {
+    background-color: #888; /* thumb color */
+    border-radius: 4px;
+    border: 2px solid #f1f1f1; /* space around thumb */
+}
+
+.log-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* hover effect */
+}
+
+
+.log-list > p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  background-color: rgb(187, 233, 235);
+  width: 100px;
+  height: 20px;
+  border: 2px solid brown;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gameover-box{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column ;
+  width: 600px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gameover-box h1{
+  color: #EE6983;
+}
+
+.gameover-box h2{
+  color: #850E35;
+}
+
+.gameover-box button{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #EE6983;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gameover-box button:hover{
+  background-color: #850E35;
+  transform: scale(1.25);
+}
